@@ -42,7 +42,6 @@ class Products extends Controller
                 'furniture_height_error' => '',
                 'furniture_width_error' => '',
                 'furniture_length_error' => '',
-
             ];
 
             // Validate data
@@ -92,7 +91,9 @@ class Products extends Controller
             if (empty($data['product_sku_error']) && empty($data['product_name_error']) && empty($data['unit_price_error']) && empty($data['product_type_error'])) {
 
                 // Validated
-                if ($this->productModel->addProduct($data)) {
+                // Creates a new model based on selected product type
+                $this->newModel = $this->model(ucwords($data['product_type']));
+                if ($this->newModel->addProduct($data)) {
                     redirect('products');
                 } else {
                     die('Something went wrong');
