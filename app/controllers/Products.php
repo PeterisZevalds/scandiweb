@@ -63,28 +63,21 @@ class Products extends Controller
                 $data['product_type_error'] = 'Please choose product type';
             }
 
-            switch ($data['product_type']) {
-                case 'dvd':
-                    if (empty($data['dvd_size'])) {
-                        $data['dvd_size_error'] = 'Please enter DVD Size';
-                    }
-                    break;
-                case 'book':
-                    if (empty($data['book_weight'])) {
-                        $data['book_weight_error'] = 'Please enter book weight';
-                    }
-                    break;
-                case 'furniture':
-                    if (empty($data['furniture_height'])) {
-                        $data['furniture_height_error'] = 'Please enter furniture weight';
-                    }
-                    if (empty($data['furniture_width'])) {
-                        $data['furniture_width_error'] = 'Please enter furniture width';
-                    }
-                    if (empty($data['furniture_length'])) {
-                        $data['furniture_length_error'] = 'Please enter furniture length';
-                    }
-                    break;
+            // Validate product weight/size
+            if (empty($data['dvd_size'])) {
+                $data['dvd_size_error'] = 'Please enter DVD Size';
+            }
+            if (empty($data['book_weight'])) {
+                $data['book_weight_error'] = 'Please enter book weight';
+            }
+            if (empty($data['furniture_height'])) {
+                $data['furniture_height_error'] = 'Please enter furniture weight';
+            }
+            if (empty($data['furniture_width'])) {
+                $data['furniture_width_error'] = 'Please enter furniture width';
+            }
+            if (empty($data['furniture_length'])) {
+                $data['furniture_length_error'] = 'Please enter furniture length';
             }
 
             // Make sure no errors
@@ -96,7 +89,7 @@ class Products extends Controller
                 if ($this->newModel->addProduct($data)) {
                     redirect('products');
                 } else {
-                    die('Something went wrong');
+                    $this->view('products/add', $data);
                 }
             } else {
                 $this->view('products/add', $data);

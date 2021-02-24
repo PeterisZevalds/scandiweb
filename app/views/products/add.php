@@ -58,7 +58,7 @@
         <div class="m-2 row">
             <label class="col-5 col-form-label w-25">Size<span style="color:red">*</span></label>
             <div class="col-auto w-50">
-                <input type="number" style="width: 13rem;" class="form-control <?php echo (!empty($data['dvd_size_error'])) ? 'is-invalid' : ''; ?>" name="dvd_size" id="dvd_size">
+                <input type="number" style="width: 13rem;" class="form-control <?php echo (!empty($data['dvd_size_error'])) ? 'is-invalid' : ''; ?>" name="dvd_size" id="dvd_size" value="<?php echo $data['dvd_size']; ?>">
                 <span style="width: 13rem;" class="invalid-feedback"><?php echo $data['dvd_size_error']; ?></span>
             </div>
         </div>
@@ -72,7 +72,7 @@
         <div class="m-2 row">
             <label class="col-5 col-form-label w-25">Weight<span style="color:red">*</span></label>
             <div class="col-auto w-50">
-                <input type="number" style="width: 13rem;" step="0.01" class="form-control <?php echo (!empty($data['book_weight_error'])) ? 'is-invalid' : ''; ?>" name="book_weight" id="book_weight">
+                <input type="number" style="width: 13rem;" step="0.01" class="form-control <?php echo (!empty($data['book_weight_error'])) ? 'is-invalid' : ''; ?>" name="book_weight" id="book_weight" value="<?php echo $data['book_weight']; ?>">
                 <span style="width: 13rem;" class="invalid-feedback"><?php echo $data['book_weight_error']; ?></span>
             </div>
         </div>
@@ -86,21 +86,21 @@
         <div class="m-2 row">
             <label class="col-5 col-form-label w-25">Height<span style="color:red">*</span></label>
             <div class="col-auto w-50">
-                <input type="number" style="width: 13rem;" class="form-control <?php echo (!empty($data['furniture_height_error'])) ? 'is-invalid' : ''; ?>" name="furniture_height" id="furniture_height">
+                <input type="number" style="width: 13rem;" class="form-control <?php echo (!empty($data['furniture_height_error'])) ? 'is-invalid' : ''; ?>" name="furniture_height" id="furniture_height" value="<?php echo $data['furniture_height']; ?>">
                 <span style="width: 13rem;" class="invalid-feedback"><?php echo $data['furniture_height_error']; ?></span>
             </div>
         </div>
         <div class="m-2 row">
             <label class="col-5 col-form-label w-25">Width<span style="color:red">*</span></label>
             <div class="col-auto w-50">
-                <input type="number" style="width: 13rem;" class="form-control <?php echo (!empty($data['furniture_width_error'])) ? 'is-invalid' : ''; ?>" name="furniture_width" id="furniture_width">
+                <input type="number" style="width: 13rem;" class="form-control <?php echo (!empty($data['furniture_width_error'])) ? 'is-invalid' : ''; ?>" name="furniture_width" id="furniture_width" value="<?php echo $data['furniture_width']; ?>">
                 <span style="width: 13rem;" class="invalid-feedback"><?php echo $data['furniture_width_error']; ?></span>
             </div>
         </div>
         <div class="m-2 row">
             <label class="col-5 col-form-label w-25">Length<span style="color:red">*</span></label>
             <div class="col-auto w-50">
-                <input type="number" style="width: 13rem;" class="form-control <?php echo (!empty($data['furniture_width_error'])) ? 'is-invalid' : ''; ?>" name="furniture_length" id="furniture_length">
+                <input type="number" style="width: 13rem;" class="form-control <?php echo (!empty($data['furniture_width_error'])) ? 'is-invalid' : ''; ?>" name="furniture_length" id="furniture_length" value="<?php echo $data['furniture_length']; ?>">
                 <span style="width: 13rem;" class="invalid-feedback"><?php echo $data['furniture_width_error']; ?></span>
             </div>
         </div>
