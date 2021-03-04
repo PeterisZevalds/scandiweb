@@ -5,6 +5,18 @@
 
 class Book extends Product
 {
+    public function checkProductError($data)
+    {
+        if (empty($data['book_weight'])) {
+            return true;
+        }
+    }
+
+    public function getErrorMessage()
+    {
+        $errorMessage = 'Please enter book weight in KG';
+        return $errorMessage;
+    }
 
     public function addProduct($data)
     {

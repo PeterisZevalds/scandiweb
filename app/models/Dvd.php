@@ -5,6 +5,18 @@
 
 class Dvd extends Product
 {
+    public function checkProductError($data)
+    {
+        if (empty($data['dvd_size'])) {
+            return true;
+        }
+    }
+
+    public function getErrorMessage()
+    {
+        $errorMessage = 'Please enter dvd size in MB';
+        return $errorMessage;
+    }
 
     public function addProduct($data)
     {

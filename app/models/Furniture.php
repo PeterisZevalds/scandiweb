@@ -5,6 +5,19 @@
 
 class Furniture extends Product
 {
+    public function checkProductError($data)
+    {
+        if (empty($data['furniture_height']) || empty($data['furniture_width']) || empty($data['furniture_length'])) {
+            return true;
+        }
+    }
+
+    public function getErrorMessage()
+    {
+        $errorMessage = 'Please fill field';
+        return $errorMessage;
+    }
+
     public function addProduct($data)
     {
 
