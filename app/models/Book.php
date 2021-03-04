@@ -8,8 +8,9 @@ class Book extends Product
 
     public function addProduct($data)
     {
-        // Checks if book weight is entered before executing database query
-        if (empty($data['book_weight_error'])) {
+        if (empty($data['book_weight'])) {
+            return false;
+        } else {
             $description = 'Weight: ' . $data['book_weight'] . ' KG';
             $this->db->query('INSERT INTO products (product_sku, product_name, unit_price, product_type, product_description) VALUES (:product_sku, :product_name, :unit_price, :product_type, :product_description)');
 

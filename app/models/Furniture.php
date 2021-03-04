@@ -9,8 +9,11 @@ class Furniture extends Product
     {
 
         // Checks if all 3 furniture parameters are entered before executing database query
-        if (empty($data['furniture_height_error']) && empty($data['furniture_width_error']) && empty($data['furniture_length_error'])) {
+        if (empty($data['furniture_height']) || empty($data['furniture_width']) || empty($data['furniture_length'])) {
+            return false;
+        } else {
             $description = 'Dimension: ' . $data['furniture_height'] . 'x' . $data['furniture_width'] . 'x' . $data['furniture_length'];
+
             $this->db->query('INSERT INTO products (product_sku, product_name, unit_price, product_type, product_description) VALUES (:product_sku, :product_name, :unit_price, :product_type, :product_description)');
 
             // Bind values

@@ -42,6 +42,7 @@ class Products extends Controller
                 'furniture_height_error' => '',
                 'furniture_width_error' => '',
                 'furniture_length_error' => '',
+                'product_error' => '',
             ];
 
             // Validate data
@@ -61,23 +62,6 @@ class Products extends Controller
             }
             if (empty($data['product_type'])) {
                 $data['product_type_error'] = 'Please choose product type';
-            }
-
-            // Validate product weight/size
-            if (empty($data['dvd_size'])) {
-                $data['dvd_size_error'] = 'Please enter DVD Size';
-            }
-            if (empty($data['book_weight'])) {
-                $data['book_weight_error'] = 'Please enter book weight';
-            }
-            if (empty($data['furniture_height'])) {
-                $data['furniture_height_error'] = 'Please enter furniture weight';
-            }
-            if (empty($data['furniture_width'])) {
-                $data['furniture_width_error'] = 'Please enter furniture width';
-            }
-            if (empty($data['furniture_length'])) {
-                $data['furniture_length_error'] = 'Please enter furniture length';
             }
 
             // Make sure no errors

@@ -9,7 +9,9 @@ class Dvd extends Product
     public function addProduct($data)
     {
         // Checks if dvd size is entered before executing database query
-        if (empty($data['dvd_size_error'])) {
+        if (empty($data['dvd_size'])) {
+            return false;
+        } else {
             $description = 'Size: ' . $data['dvd_size'] . ' MB';
             $this->db->query('INSERT INTO products (product_sku, product_name, unit_price, product_type, product_description) VALUES (:product_sku, :product_name, :unit_price, :product_type, :product_description)');
 
