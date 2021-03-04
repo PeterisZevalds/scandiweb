@@ -61,13 +61,12 @@ class Products extends Controller
                 // Validated
                 // Creates a new model based on selected product type
                 $this->newModel = $this->model(ucwords($data['product_type']));
+                // Calls method to validate product parameters.
                 if ($this->newModel->checkProductError($data)) {
-                    
+
+                    // Calls function to get error message from product model and sets the error message.
                     $errorMessage = $this->newModel->getErrorMessage();
-
                     $data['product_parameter_error'] = $errorMessage;
-                    
-
                     $this->view('products/add', $data);
                 } else if ($this->newModel->addProduct($data)) {
                     redirect('products');
