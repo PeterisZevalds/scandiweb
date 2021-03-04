@@ -33,15 +33,6 @@ class Products extends Controller
                 'furniture_height' => trim($_POST['furniture_height']),
                 'furniture_width' => trim($_POST['furniture_width']),
                 'furniture_length' => trim($_POST['furniture_length']),
-                'product_sku_error' => '',
-                'product_name_error' => '',
-                'unit_price_error' => '',
-                'product_type_error' => '',
-                'dvd_size_error' => '',
-                'book_weight_error' => '',
-                'furniture_height_error' => '',
-                'furniture_width_error' => '',
-                'furniture_length_error' => '',
                 'product_parameter_error' => '',
             ];
 
